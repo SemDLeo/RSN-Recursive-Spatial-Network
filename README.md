@@ -137,7 +137,7 @@ $$
 
 The recursive expansion forms a prediction tree.
 
-If each node generates $C$ branches and the depth is $D$::
+If each node generates $C$ branches and the depth is $D$:
 
 $$
 N = \sum_{k=0}^{D} C^k
