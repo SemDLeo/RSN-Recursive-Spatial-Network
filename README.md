@@ -47,21 +47,17 @@ $$
 
 A general representation:
 
-[
-f_i =
-(s_i, h_i, i_{1,i}, i_{2,i}, i_{3,i}, r_i)
-]
+$$
+f_i = (s_i, h_i, i_{1,i}, i_{2,i}, i_{3,i}, r_i)
+$$
 
 Where:
 
-| Dimension | Description             |
-| --------- | ----------------------- |
-| s         | system state encoding   |
-| h         | historical summary      |
-| i1        | indicator 1             |
-| i2        | indicator 2             |
-| i3        | indicator 3             |
-| r         | resource/value variable |
+$s_i$ : system state encoding
+$h_i$ : historical summary
+$i_{1,i}, i_{2,i}, i_{3,i}$ : indicators
+$r_i$ : resource/value variable
+
 
 These features are **domain-independent** and can represent different systems.
 
@@ -97,9 +93,9 @@ economic index
 
 The state vector lies within a **6-dimensional hypercube**:
 
-[
+$$
 \mathcal{H}_6 = [0,1]^6
-]
+$$
 
 The hypercube structure provides:
 
@@ -124,28 +120,28 @@ Future states are generated recursively.
 
 For a node (n_t):
 
-[
+$$
 n_{t+1,j} = G(n_t, \epsilon_j)
-]
+$$
 
 Where:
 
-* (G) is the state transition generator
-* (\epsilon_j) is stochastic perturbation
+$G$ is the state generator
+$\epsilon_j$ is a stochastic perturbation.
 
 State update:
 
-[
+$$
 f_{t+1} = \Phi(f_t, \epsilon)
-]
+$$
 
 The recursive expansion forms a prediction tree.
 
-If each node generates **C branches** and the depth is **D**:
+If each node generates $C$ branches and the depth is $D$::
 
-[
+$$
 N = \sum_{k=0}^{D} C^k
-]
+$$
 
 This tree represents a **set of possible future trajectories**.
 
@@ -204,11 +200,11 @@ Each node may carry a value or reward signal.
 
 Value update:
 
-[
+$$
 v_{t+1} = v_t + R(n_t, n_{t+1})
-]
+$$
 
-Where (R) is a domain-specific reward function.
+Where $R$ is a reward or value function.
 
 Examples:
 
@@ -236,11 +232,9 @@ energy change
 
 RSN searches for trajectories maximizing cumulative value:
 
-[
-P^* =
-\arg\max_P
-\sum_{n_i \in P} v_i
-]
+$$
+P^* = \arg\max_P \sum_{n_i \in P} v_i
+$$
 
 This resembles **Monte Carlo trajectory search**, but operates within a structured **high-dimensional state space**.
 
@@ -254,9 +248,9 @@ The combination of **6-dimensional state space and recursive expansion** offers 
 
 State space size:
 
-[
+$$
 |\mathcal{S}| = n^6
-]
+$$
 
 This provides high expressiveness while remaining computationally manageable.
 
@@ -268,9 +262,9 @@ Traditional predictors produce a single trajectory.
 
 RSN generates multiple future paths:
 
-[
+$$
 {f_{t+1}^{(1)}, ..., f_{t+1}^{(C)}}
-]
+$$
 
 This reduces long-term prediction sensitivity to noise.
 
