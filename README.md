@@ -335,7 +335,7 @@ If you reference this project:
 
 # License
 
-Apache 2.0 License
+MIT License
 
 ---
 
