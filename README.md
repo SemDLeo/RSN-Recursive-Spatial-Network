@@ -263,7 +263,7 @@ Traditional predictors produce a single trajectory.
 RSN generates multiple future paths:
 
 $$
-{f_{t+1}^{(1)}, ..., f_{t+1}^{(C)}}
+\{f_{t+1}^{(1)}, ..., f_{t+1}^{(C)}}\
 $$
 
 This reduces long-term prediction sensitivity to noise.
@@ -318,7 +318,7 @@ RSN-engine (coming soon)
 If you reference this project:
 
 ```
-@article{leo2026rsn,
+@article{sem.d.leo2026rsn,
   title={Recursive Spatial Network: Prediction over a 6D Hypercube State Space},
   author={Leo},
   year={2026}
