@@ -319,9 +319,9 @@ RSN-engine (coming soon)
 If you reference this project:
 
 ```
-@article{sem.d.leo2026rsn,
+@article{leo2026rsn,
   title={Recursive Spatial Network: Prediction over a 6D Hypercube State Space},
-  author={Leo},
+  author={Sem.D.Leo},
   year={2026}
 }
 ```
