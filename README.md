@@ -262,9 +262,7 @@ Traditional predictors produce a single trajectory.
 
 RSN generates multiple future paths:
 
-$$
-\left\{ f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)} \right\}
-$$
+$` \left\{ f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)} \right\} `$
 
 
 This reduces long-term prediction sensitivity to noise.
