@@ -41,9 +41,9 @@ State Encoding → Recursive Expansion → Spatial Mapping → Value Evaluation
 
 Each node in RSN represents a system state encoded as a **6-dimensional feature vector**:
 
-[
+$$
 f_i \in \mathbb{R}^6
-]
+$$
 
 A general representation:
 
