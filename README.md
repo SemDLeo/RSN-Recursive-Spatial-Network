@@ -53,10 +53,10 @@ $$
 
 Where:
 
-$s_i$ : system state encoding
-$h_i$ : historical summary
-$i_{1,i}, i_{2,i}, i_{3,i}$ : indicators
-$r_i$ : resource/value variable
+* $s_i$ : system state encoding
+* $h_i$ : historical summary
+* $i_{1,i}, i_{2,i}, i_{3,i}$ : indicators
+* $r_i$ : resource/value variable
 
 
 These features are **domain-independent** and can represent different systems.
@@ -274,9 +274,9 @@ This reduces long-term prediction sensitivity to noise.
 
 With sufficient branching:
 
-[
+$$
 C \rightarrow \infty
-]
+$$
 
 RSN approximates the full reachable state space.
 
