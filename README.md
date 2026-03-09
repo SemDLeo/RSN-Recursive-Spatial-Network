@@ -263,7 +263,7 @@ Traditional predictors produce a single trajectory.
 RSN generates multiple future paths:
 
 $$
-\left\{ f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)} \right\}
+\big\{ f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)} \big\}
 $$
 
 
