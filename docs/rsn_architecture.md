@@ -4,105 +4,335 @@
 
 Recursive Spatial Network (RSN) is composed of four core layers:
 
-1. State Representation Layer
-2. Recursive Expansion Layer
-3. Spatial Mapping Layer
-4. Value Evaluation Layer
+1. **State Representation Layer**
+2. **Recursive Expansion Layer**
+3. **Spatial Mapping Layer**
+4. **Value Evaluation Layer**
+
+These layers together form a recursive predictive architecture capable of exploring large future state spaces.
 
 ---
 
-## 2. State Representation Layer
+# 2. State Representation Layer
 
-Each node stores a feature vector:
+Each node stores a feature vector defined as:
 
-f ∈ R⁶
+$$
+f \in \mathbb{R}^6
+$$
 
-The features may represent:
+The six dimensions represent a generalized system state.
+
+Example structure:
+
+$$
+f = (x_1, x_2, x_3, x_4, x_5, x_6)
+$$
+
+Where the dimensions may encode:
 
 - environment state
 - system variables
 - historical signals
 - prediction indicators
+- resource variables
+- control parameters
 
-This abstraction allows RSN to be applied across domains.
+This abstraction allows RSN to be applied across multiple domains.
+
+Examples:
+
+- financial prediction
+- distributed storage systems
+- AI decision systems
+- complex simulations
 
 ---
 
-## 3. Recursive Expansion Layer
+# 3. Recursive Expansion Layer
 
-At each step the network generates possible future states.
+At each step, the network generates possible future states.
+
+# RSN Architecture
+
+## 1. System Overview
+
+Recursive Spatial Network (RSN) is composed of four core layers:
+
+1. **State Representation Layer**
+2. **Recursive Expansion Layer**
+3. **Spatial Mapping Layer**
+4. **Value Evaluation Layer**
+
+These layers together form a recursive predictive architecture capable of exploring large future state spaces.
+
+---
+
+# 2. State Representation Layer
+
+Each node stores a feature vector defined as:
+
+$$
+f \in \mathbb{R}^6
+$$
+
+The six dimensions represent a generalized system state.
+
+Example structure:
+
+$$
+f = (x_1, x_2, x_3, x_4, x_5, x_6)
+$$
+
+Where the dimensions may encode:
+
+- environment state
+- system variables
+- historical signals
+- prediction indicators
+- resource variables
+- control parameters
+
+This abstraction allows RSN to be applied across multiple domains.
+
+Examples:
+
+- financial prediction
+- distributed storage systems
+- AI decision systems
+- complex simulations
+
+---
+
+# 3. Recursive Expansion Layer
+
+At each step, the network generates possible future states.
+
+Each node recursively expands into multiple children.
 
 node(t)
-   |
-   |-- node(t+1,1)
-   |-- node(t+1,2)
-   |-- node(t+1,3)
+│
+├── node(t+1,1)
+├── node(t+1,2)
+└── node(t+1,3)
 
-Branching factor C determines the exploration width.
 
-Recursion depth D determines the prediction horizon.
+Branching factor:
+
+$$
+C
+$$
+
+Recursion depth:
+
+$$
+D
+$$
+
+Total potential nodes:
+
+$$
+N = \sum_{k=0}^{D} C^k
+$$
+
+For large recursion depth:
+
+$$
+N \approx C^D
+$$
+
+This recursive expansion allows RSN to explore a large prediction tree.
 
 ---
 
-## 4. Spatial Mapping Layer
+# 4. Spatial Mapping Layer
 
-Each node is mapped into a 3D spatial coordinate using a hash function.
+Each node is mapped into a spatial coordinate using a deterministic hash function.
 
-node_id → hash → (x,y,z)
+Mapping function:
+
+$$
+(x, y, z) = H(node\_id)
+$$
+
+Where:
+
+- $H$ is a hash function
+- node_id uniquely identifies the node
+
+Example pipeline:
+
+
+Branching factor:
+
+$$
+C
+$$
+
+Recursion depth:
+
+$$
+D
+$$
+
+Total potential nodes:
+
+$$
+N = \sum_{k=0}^{D} C^k
+$$
+
+For large recursion depth:
+
+$$
+N \approx C^D
+$$
+
+This recursive expansion allows RSN to explore a large prediction tree.
+
+---
+
+# 4. Spatial Mapping Layer
+
+Each node is mapped into a spatial coordinate using a deterministic hash function.
+
+Mapping function:
+
+$$
+(x, y, z) = H(node\_id)
+$$
+
+Where:
+
+- $H$ is a hash function
+- node_id uniquely identifies the node
+
+Example pipeline:
+
+node_id → hash → spatial coordinate (x,y,z)
+
 
 Advantages:
 
 - deterministic node location
-- distributed storage compatibility
 - scalable indexing
+- compatibility with distributed storage
 
-Nodes may be stored across distributed machines based on spatial partitioning.
+Nodes may be distributed across machines according to spatial partitions.
 
 ---
 
-## 5. Value Evaluation Layer
+# 5. Value Evaluation Layer
 
-Each node contains an evaluation value:
+Each node contains a value function:
 
+$$
 v
+$$
 
-Values propagate along recursive paths.
+Value propagation rule:
 
-The system evaluates multiple possible futures and selects the optimal trajectory.
+$$
+v_{t+1} = v_t + R(f_t, f_{t+1})
+$$
+
+Where:
+
+- $R$ is the reward or evaluation function.
+
+The system evaluates multiple trajectories and selects the optimal path.
+
+Optimal trajectory:
+
+$$
+P^* = \arg\max_P \sum_{n_i \in P} v_i
+$$
 
 ---
 
-## 6. Distributed Storage Potential
+# 6. Distributed Storage Potential
 
 Because node locations are deterministic:
 
 node_id → spatial coordinate
 
-RSN can support distributed storage architectures such as:
+RSN supports distributed architectures such as:
 
 - sharded storage
-- distributed hash tables
+- distributed hash tables (DHT)
 - decentralized prediction networks
+
+Nodes can be partitioned across machines according to spatial regions.
+
+Example:
+
+RSN supports distributed architectures such as:
+
+- sharded storage
+- distributed hash tables (DHT)
+- decentralized prediction networks
+
+Nodes can be partitioned across machines according to spatial regions.
+
+Example:
+
+Machine A → nodes in region X
+Machine B → nodes in region Y
+Machine C → nodes in region Z
+
 
 ---
 
-## 7. RSN vs Traditional AI Models
+# 7. RSN vs Traditional AI Models
 
 | Model | Structure | Prediction Method |
 |------|------|------|
-| RNN | sequential | step-by-step |
-| Transformer | attention graph | token prediction |
-| RSN | recursive spatial tree | future state exploration |
+| RNN | Sequential chain | Step-by-step prediction |
+| Transformer | Attention graph | Token prediction |
+| RSN | Recursive spatial tree | Future state exploration |
+
+Key difference:
+
+RSN explicitly explores **multiple possible future trajectories**, instead of predicting only the next token or step.
 
 ---
 
-## 8. Computational Advantages
+# 8. Computational Advantages
 
 RSN offers several architectural advantages:
 
-1. parallelizable recursion
-2. explicit future trajectory modeling
-3. spatial node indexing
-4. compatibility with distributed systems
+### 1. Parallelizable recursion
 
-These properties make RSN suitable for large-scale predictive infrastructures.
+Recursive branches can be evaluated independently.
+
+### 2. Explicit future trajectory modeling
+
+RSN constructs a full prediction tree instead of a single predicted output.
+
+### 3. Spatial node indexing
+
+Hash-based spatial mapping allows scalable node addressing.
+
+### 4. Compatibility with distributed systems
+
+The architecture naturally supports distributed computing environments.
+
+---
+
+# 9. Conceptual Architecture Diagram
+
+```mermaid
+flowchart TD
+
+A[State Vector f] --> B[Recursive Expansion]
+
+B --> C1[Future State 1]
+B --> C2[Future State 2]
+B --> C3[Future State 3]
+
+C1 --> D[Value Evaluation]
+C2 --> D
+C3 --> D
+
+D --> E[Optimal Path Selection]
+
+This diagram illustrates the recursive exploration of possible future states.
