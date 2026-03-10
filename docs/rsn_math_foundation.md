@@ -81,7 +81,7 @@ where
 A node may generate multiple future states:
 
 $$
-\lbrase\{ f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)} \rbrase\}
+\lbrace\{f_{t+1}^{(1)}, \dots, f_{t+1}^{(C)}\rbrace\}
 $$
 
 where \(C\) is the branching factor.
