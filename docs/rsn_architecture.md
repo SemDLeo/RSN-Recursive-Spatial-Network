@@ -162,54 +162,7 @@ Where:
 
 Example pipeline:
 
-
-Branching factor:
-
-$$
-C
-$$
-
-Recursion depth:
-
-$$
-D
-$$
-
-Total potential nodes:
-
-$$
-N = \sum_{k=0}^{D} C^k
-$$
-
-For large recursion depth:
-
-$$
-N \approx C^D
-$$
-
-This recursive expansion allows RSN to explore a large prediction tree.
-
----
-
-# 4. Spatial Mapping Layer
-
-Each node is mapped into a spatial coordinate using a deterministic hash function.
-
-Mapping function:
-
-$$
-(x, y, z) = H(node\_id)
-$$
-
-Where:
-
-- $H$ is a hash function
-- node_id uniquely identifies the node
-
-Example pipeline:
-
 node_id → hash → spatial coordinate (x,y,z)
-
 
 Advantages:
 
@@ -265,20 +218,9 @@ Nodes can be partitioned across machines according to spatial regions.
 
 Example:
 
-RSN supports distributed architectures such as:
-
-- sharded storage
-- distributed hash tables (DHT)
-- decentralized prediction networks
-
-Nodes can be partitioned across machines according to spatial regions.
-
-Example:
-
 Machine A → nodes in region X
 Machine B → nodes in region Y
 Machine C → nodes in region Z
-
 
 ---
 
