@@ -161,9 +161,9 @@ Where:
 - node_id uniquely identifies the node
 
 Example pipeline:
-
+<p align="center">
 node_id → hash → spatial coordinate (x,y,z)
-
+</p>
 Advantages:
 
 - deterministic node location
