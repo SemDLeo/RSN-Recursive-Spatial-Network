@@ -110,6 +110,7 @@ At each step, the network generates possible future states.
 
 Each node recursively expands into multiple children.
 
+```mermaid
 graph TD
 
 A[node(t)]
