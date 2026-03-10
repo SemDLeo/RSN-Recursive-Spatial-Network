@@ -265,16 +265,18 @@ The architecture naturally supports distributed computing environments.
 ```mermaid
 flowchart TD
 
-A[State Vector f] --> B[Recursive Expansion]
+A[Input State Vector]
 
-B --> C1[Future State 1]
-B --> C2[Future State 2]
-B --> C3[Future State 3]
+A --> B[State Representation Layer]
 
-C1 --> D[Value Evaluation]
-C2 --> D
-C3 --> D
+B --> C[Recursive Expansion Layer]
 
-D --> E[Optimal Path Selection]
+C --> D1[Future State 1]
+C --> D2[Future State 2]
+C --> D3[Future State 3]
 
+D1 --> E[Value Evaluation]
+D2 --> E
+D3 --> E
 
+E --> F[Optimal Path Selection]
