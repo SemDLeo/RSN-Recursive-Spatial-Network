@@ -1,4 +1,3 @@
-```markdown
 # RSN Recursive Prediction Tree
 
 This diagram illustrates how RSN expands possible future states recursively.
