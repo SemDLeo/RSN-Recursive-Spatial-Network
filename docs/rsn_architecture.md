@@ -110,21 +110,7 @@ At each step, the network generates possible future states.
 
 Each node recursively expands into multiple children.
 
-```mermaid
-graph TD
-
-A[node(t)]
-
-A --> B[node(t+1,1)]
-A --> C[node(t+1,2)]
-A --> D[node(t+1,3)]
-
-B --> E[node(t+2,1)]
-B --> F[node(t+2,2)]
-
-C --> G[node(t+2,3)]
-C --> H[node(t+2,4)]
-
+![image](https://github.com/SemDLeo/RSN-Recursive-Spatial-Network/IMG/mermaid-diagram.png)
 
 Branching factor:
 
