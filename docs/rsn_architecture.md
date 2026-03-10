@@ -110,7 +110,7 @@ At each step, the network generates possible future states.
 
 Each node recursively expands into multiple children.
 
-![image](https://github.com/SemDLeo/RSN-Recursive-Spatial-Network/IMG/mermaid-diagram.png)
+![image](https://github.com/SemDLeo/RSN-Recursive-Spatial-Network/blob/main/IMG/mermaid-diagram.png)
 
 Branching factor:
 
