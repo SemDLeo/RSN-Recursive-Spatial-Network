@@ -309,7 +309,7 @@ Planned developments include:
 A reference implementation will be released in:
 
 ```
-RSN-engine (coming soon)
+https://github.com/SemDLeo/RSN-engine
 ```
 
 ---
