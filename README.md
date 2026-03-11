@@ -306,10 +306,7 @@ Planned developments include:
 * visualization tools
 * reinforcement learning integration
 
-A reference implementation will be released in:
-
-
-[RSN-engine](https://github.com/SemDLeo/RSN-engine)
+A reference implementation will be released in:[RSN-engine](https://github.com/SemDLeo/RSN-engine)
 
 
 ---
