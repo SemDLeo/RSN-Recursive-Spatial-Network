@@ -308,9 +308,9 @@ Planned developments include:
 
 A reference implementation will be released in:
 
-```
-https://github.com/SemDLeo/RSN-engine
-```
+
+[RSN-engine](https://github.com/SemDLeo/RSN-engine)
+
 
 ---
 
